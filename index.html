@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech For Girls - Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <div class="shape shape-6"></div>
+    </div>
+    
+    <div class="floating-icons">
+        <i class="fas fa-code"></i>
+        <i class="fas fa-laptop-code"></i>
+        <i class="fas fa-robot"></i>
+        <i class="fas fa-microchip"></i>
+    </div>
+    
+    <div class="container">
+        <header class="animate__animated animate__fadeInDown">
+            <div class="logo-container">
+                <div class="logo-circle">
+                    <i class="fas fa-venus"></i>
+                </div>
+                <h1>Join <span>Tech For Girls</span></h1>
+            </div>
+            <p class="tagline">Empowering women in technology through community and education</p>
+            <div class="progress-steps">
+                <div class="step active" id="step1">1. Details</div>
+                <div class="step" id="step2">2. Share</div>
+                <div class="step" id="step3">3. Upload</div>
+                <div class="step" id="step4">4. Submit</div>
+            </div>
+        </header>
+
+        <div class="registration-form animate__animated animate__fadeInUp">
+            <form id="registrationForm">
+                <!-- Basic Details Section -->
+                <div class="form-section active" id="detailsSection">
+                    <h2><i class="fas fa-user-circle"></i> Tell Us About Yourself</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <div class="input-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email ID <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="college">College/Department <span class="required">*</span></label>
+                            <input type="text" id="college" name="college" required>
+                            <div class="input-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="next-btn" id="toShareSection">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Sharing Section -->
+                <div class="form-section" id="shareSection">
+                    <h2><i class="fas fa-share-alt"></i> Spread the Word</h2>
+                    <p class="section-description">Help us grow our community by sharing with your friends!</p>
+                    
+                    <div class="share-goal-container">
+                        <div class="goal-meter">
+                            <div class="progress-bar" id="shareProgress"></div>
+                        </div>
+                        <div class="goal-text" id="shareCounter">0/5 shares completed</div>
+                    </div>
+                    
+                    <div class="share-options">
+                        <button type="button" id="whatsappShare" class="share-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                        </button>
+                        <button type="button" id="copyLinkBtn" class="share-btn link-btn">
+                            <i class="fas fa-copy"></i> Copy Invite Link
+                        </button>
+                    </div>
+                    
+                    <div id="shareCompleteMessage" class="complete-message hidden">
+                        <i class="fas fa-check-circle"></i> Sharing complete! Thank you for helping our community grow.
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="prev-btn" id="toDetailsSection"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="next-btn" id="toUploadSection" disabled>Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- File Upload Section -->
+                <div class="form-section" id="uploadSection">
+                    <h2><i class="fas fa-cloud-upload-alt"></i> Upload Your Documents</h2>
+                    <p class="section-description">Please upload your resume or any other relevant documents</p>
+                    
+                    <div class="file-upload-container">
+                        <div class="file-upload-box" id="resumeUpload">
+                            <label for="resume" class="file-upload-label">
+                                <i class="fas fa-file-pdf"></i>
+                                <span class="file-upload-text">Upload Resume (PDF)</span>
+                                <span class="file-upload-hint">Max. size: 5MB</span>
+                                <span class="file-name" id="resumeFileName"></span>
+                            </label>
+                            <input type="file" id="resume" name="resume" accept=".pdf">
+                        </div>
+                        
+                        <div class="file-upload-box" id="photoUpload">
+                            <label for="photo" class="file-upload-label">
+                                <i class="fas fa-camera"></i>
+                                <span class="file-upload-text">Upload Photo</span>
+                                <span class="file-upload-hint">JPG or PNG, max. 2MB</span>
+                                <span class="file-name" id="photoFileName"></span>
+                            </label>
+                            <input type="file" id="photo" name="photo" accept="image/*">
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="prev-btn" id="toShareSectionBack"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="button" class="next-btn" id="toReviewSection">Review <i class="fas fa-eye"></i></button>
+                    </div>
+                </div>
+
+                <!-- Review Section -->
+                <div class="form-section" id="reviewSection">
+                    <h2><i class="fas fa-check-circle"></i> Review Your Information</h2>
+                    
+                    <div class="review-summary">
+                        <div class="review-item">
+                            <h3>Personal Information</h3>
+                            <p><strong>Name:</strong> <span id="reviewName"></span></p>
+                            <p><strong>Phone:</strong> <span id="reviewPhone"></span></p>
+                            <p><strong>Email:</strong> <span id="reviewEmail"></span></p>
+                            <p><strong>College:</strong> <span id="reviewCollege"></span></p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <h3>Documents</h3>
+                            <p><strong>Resume:</strong> <span id="reviewResume"></span></p>
+                            <p><strong>Photo:</strong> <span id="reviewPhoto"></span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="prev-btn" id="toUploadSectionBack"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Submit Registration
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="successMessage" class="success-message hidden">
+                <div class="success-icon animate__animated animate__bounceIn">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2 class="animate__animated animate__fadeIn">🎉 Registration Successful!</h2>
+                <p class="animate__animated animate__fadeIn">Thank you for joining Tech for Girls!</p>
+                <div class="success-details animate__animated animate__fadeIn">
+                    <p>We've sent a confirmation email to <span id="successEmail"></span></p>
+                    <p>Join our community groups to connect with other members:</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp Group</a>
+                        <a href="#" class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i> Facebook Group</a>
+                        <a href="#" class="social-btn linkedin-btn"><i class="fab fa-linkedin-in"></i> LinkedIn Group</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="animate__animated animate__fadeInUp">
+        <div class="footer-content">
+            <p>© 2023 Tech For Girls | Empowering Women in Technology</p>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+                <a href="#"><i class="fas fa-shield-alt"></i> Privacy</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="confetti-container" id="confetti"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
